@@ -5,8 +5,7 @@ on:
   pull_request:
     types: [opened, synchronize]
 
-permissions:
-  contents: read
+permissions: read-all
 
 jobs:
   test:
