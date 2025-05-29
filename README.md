@@ -1,5 +1,8 @@
 # Laravel Notification for Discord(Webhook)
 
+[![Maintainability](https://qlty.sh/badges/31f8a4d4-2dc7-4331-9b55-144df15fff85/maintainability.svg)](https://qlty.sh/gh/invokable/projects/laravel-notification-discord-webhook)
+[![Code Coverage](https://qlty.sh/badges/31f8a4d4-2dc7-4331-9b55-144df15fff85/test_coverage.svg)](https://qlty.sh/gh/invokable/projects/laravel-notification-discord-webhook)
+
 https://discord.com/developers/docs/resources/webhook#execute-webhook
 
 ## Requirements
