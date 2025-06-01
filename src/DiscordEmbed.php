@@ -15,8 +15,7 @@ final class DiscordEmbed implements Arrayable
         protected ?string $url = null,
         protected ?string $image = null,
         protected ?string $thumbnail = null,
-    )
-    {
+    ) {
         //
     }
 
@@ -26,8 +25,7 @@ final class DiscordEmbed implements Arrayable
         ?string $url = null,
         ?string $image = null,
         ?string $thumbnail = null,
-    ): self
-    {
+    ): self {
         return new self(...func_get_args());
     }
 

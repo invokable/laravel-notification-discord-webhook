@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Client\Request;
-use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Notifications\Events\NotificationSent;
 use Illuminate\Notifications\Notifiable;
@@ -15,8 +14,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Revolution\Laravel\Notification\DiscordWebhook\DiscordAttachment;
 use Revolution\Laravel\Notification\DiscordWebhook\DiscordChannel;
-use Revolution\Laravel\Notification\DiscordWebhook\DiscordMessage;
 use Revolution\Laravel\Notification\DiscordWebhook\DiscordEmbed;
+use Revolution\Laravel\Notification\DiscordWebhook\DiscordMessage;
 use Tests\TestCase;
 
 class NotificationTest extends TestCase
@@ -85,7 +84,7 @@ class NotificationTest extends TestCase
 
     public function test_message_with()
     {
-        $m = (new DiscordMessage())->with(['with' => 'test']);
+        $m = (new DiscordMessage)->with(['with' => 'test']);
 
         $this->assertSame(['with' => 'test'], $m->toArray());
     }
@@ -139,7 +138,7 @@ class NotificationTest extends TestCase
     {
         Http::fake();
 
-        $user = new TestUser();
+        $user = new TestUser;
 
         $user->notify(new TestNotification('test'));
 
@@ -176,8 +175,7 @@ class TestNotification extends \Illuminate\Notifications\Notification
 {
     public function __construct(
         protected string $content,
-    ) {
-    }
+    ) {}
 
     public function via(object $notifiable): array
     {
@@ -197,8 +195,7 @@ class TestFileNotification extends \Illuminate\Notifications\Notification
 {
     public function __construct(
         protected string $content,
-    ) {
-    }
+    ) {}
 
     public function via(object $notifiable): array
     {
