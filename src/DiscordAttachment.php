@@ -5,10 +5,10 @@ namespace Revolution\Laravel\Notification\DiscordWebhook;
 class DiscordAttachment
 {
     public function __construct(
-        readonly public string $content,
-        readonly public string $filename,
-        readonly public string $description = '',
-        readonly public string $filetype = '',
+        public readonly string $content,
+        public readonly string $filename,
+        public readonly string $description = '',
+        public readonly string $filetype = '',
     ) {
         //
     }
