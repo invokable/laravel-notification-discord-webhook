@@ -35,7 +35,7 @@ class DiscordChannel
         }
 
         if (Arr::has($message->toArray(), 'components')) {
-            $webhook_url .= '&with_components=true';
+            $webhook_url .= '?with_components=true';
         }
 
         return Http::attach(
