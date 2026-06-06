@@ -6,6 +6,7 @@ use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Http\Client\Response;
 use Illuminate\Notifications\Notification;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 
 class DiscordChannel
@@ -31,6 +32,10 @@ class DiscordChannel
 
         if (empty($webhook_url)) {
             return null;
+        }
+
+        if (Arr::has($message->toArray(), 'components')) {
+            $webhook_url .= '&with_components=true';
         }
 
         return Http::attach(
